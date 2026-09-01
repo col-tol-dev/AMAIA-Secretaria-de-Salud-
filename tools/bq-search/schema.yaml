@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: BigQuery API
+  version: 1.0.0
+servers:
+  - url: https://www.googleapis.com/bigquery/v2
+paths:
+  /projects/co-tol-prd/queries:
+    post:
+      summary: Execute SQL query on BigQuery
+      operationId: executeQuery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryRequest'
+      responses:
+        '200':
+          description: Successful query execution
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryResponse'
+components:
+  schemas:
+    QueryRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The SQL query to be executed
+        useLegacySql:
+          type: boolean
+          description: Specifies whether to use legacy SQL syntax (false for standard SQL).
+    QueryResponse:
+      type: object

@@ -1,0 +1,13 @@
+{
+  "name": "5b24e0ea-4d76-4905-a608-38793e49a652",
+  "displayName": "bq-search",
+  "description": "Esta API, titulada BigQuery API, está diseñada para permitir la ejecución de consultas SQL directamente en un proyecto específico de Google BigQuery. Su función principal es enviar una consulta SQL al servicio de BigQuery y devolver los resultados.",
+  "openApiSpec": {
+    "authentication": {
+      "serviceAccountAuthConfig": {
+        "serviceAccount": "753170017712-compute@developer.gserviceaccount.com"
+      }
+    }
+  },
+  "toolType": "CUSTOMIZED_TOOL"
+}

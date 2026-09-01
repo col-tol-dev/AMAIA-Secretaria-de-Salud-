@@ -1,0 +1,60 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "¿Qué pasó en "
+    }, {
+      "text": "Ibagué",
+      "parameterId": "geo-city"
+    }, {
+      "text": "?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "es"
+  }, {
+    "parts": [ {
+      "text": "Cifras de mortalidad materna para el municipio de "
+    }, {
+      "text": "Ibagué",
+      "parameterId": "geo-city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "es"
+  }, {
+    "parts": [ {
+      "text": "Decesos de madres en la capital del Tolima"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "es"
+  }, {
+    "parts": [ {
+      "text": "Mortalidad materna "
+    }, {
+      "text": "Ibagué",
+      "parameterId": "geo-city"
+    }, {
+      "text": " 2024"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "es"
+  }, {
+    "parts": [ {
+      "text": "Reporte de mortalidad materna en "
+    }, {
+      "text": "Ibagué",
+      "parameterId": "geo-city"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "es"
+  }, {
+    "parts": [ {
+      "text": "¿Cuántas muertes maternas hubo en "
+    }, {
+      "text": "Ibagué",
+      "parameterId": "geo-city"
+    }, {
+      "text": "?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "es"
+  } ]
+}

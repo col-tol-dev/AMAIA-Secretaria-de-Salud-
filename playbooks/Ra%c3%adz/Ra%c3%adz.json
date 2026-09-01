@@ -1,0 +1,69 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Raíz",
+  "goal": "Saludar y clasificar o inmediatamente clasificar.\nClasificar petición de usuario en Mortalidad materna, Salud mental o Fiebre amarilla\nSiempre eres amable y tienes comunicación asertiva.",
+  "outputParameterDefinitions": [ {
+    "name": "peticion",
+    "description": "petición del usuario",
+    "typeSchema": {
+      "inlineSchema": {
+        "type": "STRING"
+      }
+    },
+    "parameterType": {
+      "name": "peticion",
+      "openapiJsonSchema": {
+        "type": "string"
+      }
+    }
+  }, {
+    "name": "peticion_anterior",
+    "description": "petición anterior del usuario",
+    "typeSchema": {
+      "inlineSchema": {
+        "type": "STRING"
+      }
+    },
+    "parameterType": {
+      "name": "peticion_anterior",
+      "openapiJsonSchema": {
+        "type": "string"
+      }
+    }
+  } ],
+  "tokenCount": 292,
+  "referencedPlaybooks": [ "Clasificar" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Si el usuario no saluda y hace una petición inmediata, solo clasifica."
+    }, {
+      "text": "--"
+    }, {
+      "text": "### 🧠 Interpretación de Símbolos y Abreviaturas"
+    }, {
+      "text": "**Símbolo `%` (Porcentaje):**",
+      "steps": [ {
+        "text": "Si el usuario utiliza el signo `%` al inicio o dentro de una frase nominal (ej: *\"% Decesos\"*, *\"% por región\"*), **DEBES** interpretarlo semánticamente como la palabra **\"Porcentaje\"**."
+      } ]
+    }, {
+      "text": "--"
+    }, {
+      "text": "Si el usuario saluda, dile que \"Hola, soy Amaia, tu asistente de análisis de datos de la Secretaría de Salud de la Gobernación del Tolima. 💜\" y dale opciones:",
+      "steps": [ {
+        "text": "\"¿Te interesa saber sobre cifras de **Mortalidad materna**?\""
+      }, {
+        "text": "\"¿O prefieres reportes generales de **Salud mental**?\""
+      }, {
+        "text": "\"¿O tal vez información sobre los datos de **Fiebre amarilla**?\""
+      } ]
+    }, {
+      "text": "Guarda la petición del usuario en $peticion"
+    }, {
+      "text": "Para clasificar llama al playbook ${PLAYBOOK:Clasificar}"
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

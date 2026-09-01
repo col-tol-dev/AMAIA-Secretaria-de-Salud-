@@ -1,0 +1,72 @@
+{
+  "name": "6c601da6-a2ce-471c-90e3-cd00fd632ab2",
+  "displayName": "Mortalidad materna",
+  "transitionRoutes": [ {
+    "condition": "$session.params.peticion != \"\" OR $session.params.peticion != null",
+    "triggerFulfillment": {
+    
+    },
+    "name": "a75319a9-56b2-46b4-a0b4-cef4daa2d1b8",
+    "targetPlaybook": "Mortalidad materna SQL"
+  }, {
+    "condition": "$session.params.peticion = \"\" OR $session.params.peticion = null",
+    "triggerFulfillment": {
+    
+    },
+    "name": "4dd3df7f-f824-4ef4-acf4-8b81b09b9eb1",
+    "targetPlaybook": "Clasificar"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Ups, no he entendido a que te refieres.", "¿Podrías repetirlo, por favor?", "¿Disculpa?", "¿Decías?", "¿Cómo?" ]
+        },
+        "languageCode": "es"
+      } ]
+    },
+    "name": "d1f4ce6e-6b74-45ee-bfd8-0cd0a58dfd7c"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Ups, no he entendido a que te refieres.", "¿Podrías repetirlo, por favor?", "¿Disculpa?", "¿Decías?", "¿Cómo?" ]
+        },
+        "languageCode": "es"
+      } ]
+    },
+    "name": "f5235736-8302-4c75-9c44-c626dc697c68"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC"
+  },
+  "advancedSettings": {
+    "enabled": true
+  },
+  "nluSettingsList": [ {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "customConfigKey": "42eb3abf-b85b-4cd9-97af-df6851a2998f",
+    "languageCode": "es"
+  } ],
+  "inputParameterDefinitions": [ {
+    "name": "peticion",
+    "description": "petición del usuario",
+    "typeSchema": {
+      "inlineSchema": {
+        "type": "STRING"
+      }
+    },
+    "parameterType": {
+      "name": "peticion",
+      "openapiJsonSchema": {
+        "type": "string"
+      }
+    }
+  } ]
+}

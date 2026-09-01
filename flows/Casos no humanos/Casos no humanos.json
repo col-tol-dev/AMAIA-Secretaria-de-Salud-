@@ -1,0 +1,72 @@
+{
+  "name": "cb511d63-db19-45da-bde2-a1e751046ab7",
+  "displayName": "Casos no humanos",
+  "transitionRoutes": [ {
+    "condition": "$session.params.peticion != \"\" OR $session.params.peticion != null",
+    "triggerFulfillment": {
+    
+    },
+    "name": "688a3961-9f5d-45e9-98b1-42bc42bdea0a",
+    "targetPlaybook": "Casos no humanos SQL"
+  }, {
+    "condition": "$session.params.peticion = \"\" OR $session.params.peticion = null",
+    "triggerFulfillment": {
+    
+    },
+    "name": "e84f0508-2263-4e47-ad95-5230ad6d2090",
+    "targetPlaybook": "Clasificar"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Ups, no he entendido a que te refieres.", "¿Podrías repetirlo, por favor?", "¿Disculpa?", "¿Decías?", "¿Cómo?" ]
+        },
+        "languageCode": "es"
+      } ]
+    },
+    "name": "35f9de33-4a7a-47b4-9da0-413e75b6f8a1"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Ups, no he entendido a que te refieres.", "¿Podrías repetirlo, por favor?", "¿Disculpa?", "¿Decías?", "¿Cómo?" ]
+        },
+        "languageCode": "es"
+      } ]
+    },
+    "name": "528cc0f3-6cb5-4d6b-8fb3-2c4e977e273d"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC"
+  },
+  "advancedSettings": {
+    "enabled": true
+  },
+  "nluSettingsList": [ {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "customConfigKey": "50d20e62-2650-4f48-ac9e-c32080d341a5",
+    "languageCode": "es"
+  } ],
+  "inputParameterDefinitions": [ {
+    "name": "peticion",
+    "description": "petición del usuario",
+    "typeSchema": {
+      "inlineSchema": {
+        "type": "STRING"
+      }
+    },
+    "parameterType": {
+      "name": "peticion",
+      "openapiJsonSchema": {
+        "type": "string"
+      }
+    }
+  } ]
+}
